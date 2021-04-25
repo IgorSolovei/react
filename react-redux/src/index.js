@@ -6,8 +6,8 @@ const reducer = (state = 0, action) => {
 			return state + 1;
 		case 'DEC':
 			return state - 1;
-		case 'RND':
-			return action.value;
+		case 'RES':
+			return 0;
 		default:
 			return state;
 	}
@@ -15,7 +15,7 @@ const reducer = (state = 0, action) => {
 
 const inc = () => ({ type: 'INC' });
 const dec = () => ({ type: 'DEC' });
-const rnd = (value) => ({ type: 'RND', value });
+const rnd = (value) => ({ type: 'RES', value });
 
 const store = createStore(reducer);
 
@@ -27,9 +27,9 @@ document.querySelector('#dec').addEventListener('click', () => {
 	store.dispatch(dec());
 });
 
-document.querySelector('#rnd').addEventListener('click', () => {
-	const value = 0;
-	store.dispatch(rnd(value));
+document.querySelector('#res').addEventListener('click', () => {
+
+	store.dispatch(rnd());
 });
 
 const update = () => {
