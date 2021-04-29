@@ -119,7 +119,7 @@ export default class App extends Component {
 			return items
 		}
 		return items.filter((item) => {
-			return item.label.indexOf(term) > -1
+			return item.label.toUpperCase().indexOf(term) > -1
 		});
 	}
 
@@ -132,6 +132,8 @@ export default class App extends Component {
 
 	onUpdateSearch(term) {
 		this.setState({ term })
+		console.log(term);
+
 	}
 
 	onFilterSelect(filter) {

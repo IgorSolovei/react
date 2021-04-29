@@ -13,7 +13,10 @@ export default class SearchPanel extends Component {
 	}
 
 	onUpdateSearch(e) {
-		const term = e.target.value;
+		const term = e.target.value.toUpperCase();
+
+		//console.log(term.toUpperCase());
+
 		this.setState({ term });
 		this.props.onUpdateSearch(term);
 
