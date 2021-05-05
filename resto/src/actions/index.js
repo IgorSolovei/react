@@ -9,10 +9,25 @@ const menuRequested = () => {
 	return {
 		type: 'MENU_REQUESTED',
 
-	}
-}
+	};
+};
+
+const menuError = () => {
+	return {
+		type: 'MENU_ERROR',
+	};
+};
+const addedToCard = (id) => {
+	return {
+		type: 'ITEM_ADD_TO_CARD',
+		payload: id
+	};
+};
+
 
 export {
 	menuLoaded,
-	menuRequested
+	menuRequested,
+	menuError,
+	addedToCard
 };
